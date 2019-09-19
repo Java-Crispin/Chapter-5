@@ -141,9 +141,10 @@ public class triangle {
         }
     }
     public static void equilateralTriangleMath(double side){
-        double altitude;
-        altitude = ((1/2)*(Math.sqrt(3))*(side*side));
-        pl("The height of the triangle is " + altitude);
+        double height;
+        double base = (side/2);
+        height = Math.sqrt((side * side) - (base * base));
+        pl("The height of the triangle is " + height);
     }
     public static void pl(String p){System.out.println(p);}
 }
