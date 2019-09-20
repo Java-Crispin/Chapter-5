@@ -3,13 +3,15 @@ import java.util.Scanner;
 public class condoSales {
     public static void main(String[]args){
         Scanner input = new Scanner(System.in);
-        final int PARK_VIEW_CONDO_PRICE = 150000;
-        final int GOLF_COURSE_VIEW_CONDO_PRICE = 170000;
-        final int LAKE_VIEW_CONDO_PRICE = 210000;
-        final int GARAGE_PRICE = 5000;
+        final int PARK_VIEW_CONDO = 150000;
+        final int GOLF_COURSE_VIEW_CONDO = 170000;
+        final int LAKE_VIEW_CONDO = 210000;
+        final int PARK_VIEW_GARAGE = 155000;
+        final int GOLF_COURSE_GARAGE = 175000;
+        final int LAKE_VIEW_GARAGE = 215000;
         double userSelection;
         double otherUserSelection;
-        int userBill;
+        String result = null;
         pl("Welcome to the Summerdale Condo Sales office, we have a wide variety of condos available");
         pl("If you would like a condo with a park view, please select option '1'");
         pl("If you would like a condo with a golf course view, please select option '2'");
@@ -20,15 +22,33 @@ public class condoSales {
         pl("If you would like a garage, please select option '1'");
         pl("If you would like a parking space, please select option '2'");
         otherUserSelection = input.nextDouble();
-        if(userSelection == 1 && otherUserSelection==1)
-            userBill = PARK_VIEW_CONDO_PRICE + GARAGE_PRICE;
-            pl("You have selected the park view condo with a garage, at the price of $" + userBill);
-        else ()
-            pl("You have selected the golf course view condo, at the price of $" + GOLF_COURSE_VIEW_CONDO_PRICE+".");
-        else if(userSelection ==3)
-            pl("You have selected the lakeside view condo, at the price of $" + LAKE_VIEW_CONDO_PRICE+".");
-        else
+        if(userSelection == 1 && otherUserSelection == 1){
+            result = "the park view condo with a garage, at the price of $" + PARK_VIEW_GARAGE;
+            pl("You selected " + result + ".");
+        }
+        else if(userSelection == 1 && otherUserSelection == 2){
+            result = "the park view condo with a parking space, at the price of $" + PARK_VIEW_CONDO;
+            pl("You selected " + result + ".");
+        }
+        else if(userSelection == 2 && otherUserSelection == 1){
+            result = "the golf course view condo with a garage, at the price of $" + GOLF_COURSE_GARAGE;
+            pl("You selected " + result + ".");
+        }
+        else if(userSelection == 2 && otherUserSelection == 2){
+            result = "the golf course view condo with a parking space, at the price of $" + GOLF_COURSE_VIEW_CONDO;
+            pl("You selected " + result + ".");
+        }
+        else if(userSelection == 3 && otherUserSelection == 1){
+            result = "the lakeside condo with a garage, at the price of $" + LAKE_VIEW_GARAGE;
+            pl("You selected " + result + ".");
+        }
+        else if(userSelection == 3 && otherUserSelection == 2){
+            result = "the lakeside condo with a parking space, at the price of $" + LAKE_VIEW_CONDO;
+            pl("You selected " + result + ".");
+        }
+        else {
             pl("Please make a correct selection.");
+        }
     }
     public static void pl(String p){System.out.println(p);}
 }
