@@ -38,6 +38,9 @@ public class rockPaperScissors {
         else if(userChoice == 3 && computerChoice == 3){
             result = "It's a draw!";
         }
+        else if(userChoice > 3){
+            result = "Please enter a correct number.";
+        }
         pl(result);
     }
     public static void pl(String p){System.out.println(p);}
